@@ -130,7 +130,7 @@ namespace TestParserAnimeGo
                 dictionary.TryGetValue("Статус", out string? status);
 
                 dictionary.TryGetValue("Жанр", out string? genresValue);
-                List<Genre> genres = genresValue?.Split(",").Select(g => new Genre {Name = g.Trim()}).ToList() ??
+                List<Genre> genres = genresValue?.Split(",").Select(g => new Genre {NameRu = g.Trim()}).ToList() ??
                                      new List<Genre>();
 
                 dictionary.TryGetValue("Рейтинг MPAA", out string? mpaaRate);
@@ -139,7 +139,7 @@ namespace TestParserAnimeGo
                 dictionary.TryGetValue("Следующий эпизод", out string? nextEpisode);
 
                 dictionary.TryGetValue("Озвучка ", out string? voiceoverValue);
-                List<Voiceover> voiceovers = voiceoverValue?.Split(",").Select(v => new Voiceover{ Name = v.Trim() }).ToList() ??
+                List<Voiceover> voiceovers = voiceoverValue?.Split(",").Select(v => new Voiceover{ NameRu = v.Trim() }).ToList() ??
                                              new List<Voiceover>();
 
                 anime.Rate = rate;
@@ -214,7 +214,7 @@ namespace TestParserAnimeGo
                 {
                     foreach (var e in selector.QuerySelectorAll(".video-player-toggle-item"))
                     {
-                        list.Add(new Voiceover { Name = e.Text().Trim() });
+                        list.Add(new Voiceover { NameRu = e.Text().Trim() });
                     }
                 }
             }

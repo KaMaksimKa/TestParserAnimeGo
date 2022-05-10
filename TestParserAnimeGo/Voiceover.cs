@@ -9,8 +9,8 @@ namespace TestParserAnimeGo
     internal class Voiceover
     {
         public int VoiceoverId { get; set; }
-        public string Name { get; set; }
-        public int AnimeId { get; set; }
-        public Anime Anime { get; set; }
+        public string NameRu { get; set; }
+        public string NameEn { get; set; } = String.Empty;
+        public List<Anime> Anime { get; set; }
     }
 }
